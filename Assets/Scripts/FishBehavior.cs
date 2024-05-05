@@ -79,11 +79,7 @@ public class FishBehavior : MonoBehaviour
         }
 
         m_Hooked = true;
-
-        m_Hook.m_CurrentWeightHooked = m_FishInfo.m_Weight;
-        m_Hook.m_CurrStrainPercent = .5f;
-        m_Hook.m_FishHooked = true;
-        m_Hook.m_CurrentFish = this;
+        m_Hook.CatchFish(this, m_FishInfo);
 
         m_TugTimer?.Play();
     }
@@ -106,6 +102,6 @@ public class FishBehavior : MonoBehaviour
     public void GetCaught()
     {
         IngredientStorage.m_FishList.Add(m_FishInfo);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

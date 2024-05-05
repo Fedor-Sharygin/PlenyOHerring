@@ -61,6 +61,8 @@
     <Compile Include="Assets\Scripts\FishBehavior.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\IngredientStorage.cs" />
+    <Compile Include="Assets\Scripts\FishManager.cs" />
+    <Compile Include="Assets\Scripts\ObjectSocket.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

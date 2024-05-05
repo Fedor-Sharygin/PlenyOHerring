@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &521721475365145025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3649101038080086835}
+  - component: {fileID: 935857205097288453}
+  m_Layer: 0
+  m_Name: FishHookedSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3649101038080086835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521721475365145025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1574859355268680881}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &935857205097288453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521721475365145025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c92197cd03dcd04d9b794d3d76ff8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DestroyObjects: 0
+  m_ObjectSpeed: 0.02
 --- !u!1 &1574859353877309131
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574859355268680881}
   - component: {fileID: 1574859355268680880}
-  - component: {fileID: 1574859355268680882}
+  - component: {fileID: 4585684632503543386}
   m_Layer: 0
   m_Name: PlayerHook
   m_TagString: Player
@@ -115,6 +161,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1574859353877309108}
+  - {fileID: 3649101038080086835}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,13 +179,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CurrentBait: {fileID: 11400000, guid: 1e5f0c35c21b7644eb561c18e1764345, type: 2}
   m_HookSpeed: 2
-  m_MaxHeight: 0
+  m_MaxHeight: 1
   m_MinHeight: -4
-  m_CurrentWeightHooked: 0
-  m_CurrentFish: {fileID: 0}
+  m_StorageSocket: {fileID: 0}
   m_CurrStrainPercent: 0
---- !u!58 &1574859355268680882
-CircleCollider2D:
+  m_HookSocket: {fileID: 935857205097288453}
+--- !u!61 &4585684632503543386
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -151,5 +198,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Size: {x: 0.5974658, y: 1.4684033}
+  m_EdgeRadius: 0

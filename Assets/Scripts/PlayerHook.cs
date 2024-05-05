@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHook : MonoBehaviour
 {
     public FishInfo m_CurrentBait;
-    public bool m_FishHooked = false;
+    private bool m_FishHooked = false;
 
     [SerializeField]
     private float m_HookSpeed = 2f;
@@ -14,9 +14,11 @@ public class PlayerHook : MonoBehaviour
     [SerializeField]
     private float m_MinHeight = -2f;
 
-    public float m_CurrentWeightHooked = 0f;
-    public FishBehavior m_CurrentFish = null;
+    private float m_CurrentWeightHooked = 0f;
+    private FishBehavior m_CurrentFish = null;
 
+    [SerializeField]
+    private ObjectSocket m_StorageSocket;
     private void Update()
     {
         switch (m_FishHooked)
@@ -54,6 +56,7 @@ public class PlayerHook : MonoBehaviour
                     {
                         m_CurrentFish.GetCaught();
                         m_FishHooked = false;
+                        m_StorageSocket?.Stack(m_CurrentFish.transform);
                         break;
                     }
 
@@ -70,5 +73,22 @@ public class PlayerHook : MonoBehaviour
     public void AddStrainPercent(float p_StrainPercent)
     {
         m_CurrStrainPercent += p_StrainPercent;
+    }
+
+    [SerializeField]
+    private ObjectSocket m_HookSocket;
+    public void CatchFish(FishBehavior p_FishObj, FishInfo p_CaughtFishInfo)
+    {
+        if (p_FishObj == null || p_CaughtFishInfo == null)
+        {
+            return;
+        }
+
+        m_FishHooked = true;
+        m_CurrentFish = p_FishObj;
+        m_CurrentWeightHooked = p_CaughtFishInfo.m_Weight;
+        m_CurrStrainPercent = .4f;
+
+        m_HookSocket?.Stack(p_FishObj.transform);
     }
 }
