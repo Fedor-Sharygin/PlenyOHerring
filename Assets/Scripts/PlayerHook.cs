@@ -62,7 +62,7 @@ public class PlayerHook : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
                     {
-                        AddStrainPercent(1 - m_CurrentWeightHooked / 100f);
+                        AddStrainPercent((1 - m_CurrentWeightHooked / 100f) / 2f);
                     }
                 }
                 break;
@@ -90,5 +90,11 @@ public class PlayerHook : MonoBehaviour
         m_CurrStrainPercent = .4f;
 
         m_HookSocket?.Stack(p_FishObj.transform);
+    }
+
+
+    public void SwitchBait(FishInfo p_BaitInfo)
+    {
+        m_CurrentBait = p_BaitInfo;
     }
 }

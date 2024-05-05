@@ -74,7 +74,6 @@ public class FishBehavior : MonoBehaviour
         }
         if (!TargetFound)
         {
-            m_Hook = null;
             return;
         }
 
@@ -101,7 +100,7 @@ public class FishBehavior : MonoBehaviour
     }
     public void GetCaught()
     {
-        IngredientStorage.m_FishList.Add(m_FishInfo);
+        IngredientStorage.AddFishToList(m_FishInfo);
         //Destroy(gameObject);
     }
 }

@@ -10,10 +10,13 @@ public class FishInfo : ScriptableObject
     public string   m_Taste;
     public string   m_Minigame;
 
+    [Space(10)]
     public RuntimeAnimatorController m_FishAnimator;
 
+    [Space(10)]
     public float    m_MinSpeed;
     public float    m_MaxSpeed;
 
+    [Space(10)]
     public FishInfo[] m_FishTargets;
 }
