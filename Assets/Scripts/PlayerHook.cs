@@ -56,7 +56,10 @@ public class PlayerHook : MonoBehaviour
                     {
                         m_CurrentFish.GetCaught();
                         m_FishHooked = false;
-                        m_StorageSocket?.Stack(m_CurrentFish.transform);
+                        foreach (var Fish in m_HookSocket.RemoveObjs())
+                        {
+                            m_StorageSocket?.ForceStack(Fish);
+                        }
                         break;
                     }
 
@@ -89,7 +92,7 @@ public class PlayerHook : MonoBehaviour
         m_CurrentWeightHooked = p_CaughtFishInfo.m_Weight;
         m_CurrStrainPercent = .4f;
 
-        m_HookSocket?.Stack(p_FishObj.transform);
+        m_HookSocket?.ForceStack(p_FishObj.transform);
     }
 
 

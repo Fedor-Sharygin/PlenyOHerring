@@ -21,6 +21,14 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private bool m_StartOnAwake = true;
 
+    [Space(10)]
+    [SerializeField]
+    private bool m_RandomTimer = false;
+    [SerializeField]
+    private float m_MinTimer = .5f;
+    [SerializeField]
+    private float m_MaxTimer = 20f;
+
     public UnityEvent m_EndActions;
 
     private bool m_Paused = false;
@@ -57,6 +65,10 @@ public class Timer : MonoBehaviour
     {
         m_TimerEnded = false;
         m_CurTimeLeft = m_TimerSeconds;
+        if (m_RandomTimer)
+        {
+            m_CurTimeLeft = UnityEngine.Random.Range(m_MinTimer, m_MaxTimer);
+        }
     }
 
     public void ExecuteOnEnd()

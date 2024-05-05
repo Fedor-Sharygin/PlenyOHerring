@@ -11,11 +11,11 @@ public class FishBehavior : MonoBehaviour
     private FishInfo m_FishInfo;
 
     private PlayerHook m_Hook;
-    private void Start()
+    public void InitializeValues(FishInfo p_Info)
     {
         m_Hook = GameObject.FindFirstObjectByType<PlayerHook>();
+        m_FishInfo = p_Info;
         SetNewPos(10 * m_Direction);
-
         GetComponent<Animator>().runtimeAnimatorController = m_FishInfo.m_FishAnimator;
     }
 

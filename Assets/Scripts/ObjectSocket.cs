@@ -83,6 +83,21 @@ public class ObjectSocket : MonoBehaviour
         transform.DetachChildren();
         return Ret;
     }
+    public Transform[] RemoveObjs()
+    {
+        if (AvailableForStack)
+        {
+            return null;
+        }
+
+        Transform[] Ret = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            Ret[i] = transform.GetChild(i);
+        }
+        transform.DetachChildren();
+        return Ret;
+    }
 
     public Transform PeekObj()
     {

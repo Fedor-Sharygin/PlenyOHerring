@@ -153,6 +153,9 @@ MonoBehaviour:
   m_TimerSeconds: 2
   m_ResetOnEnd: 1
   m_StartOnAwake: 0
+  m_RandomTimer: 0
+  m_MinTimer: 0.5
+  m_MaxTimer: 20
   m_EndActions:
     m_PersistentCalls:
       m_Calls:
@@ -199,7 +202,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

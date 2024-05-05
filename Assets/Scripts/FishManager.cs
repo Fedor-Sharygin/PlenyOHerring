@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class FishManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject m_FishPrefab;
+    [SerializeField]
+    private FishInfo[] m_Infos;
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnFish()
     {
-        
+        if (m_FishPrefab == null)
+        {
+            return;
+        }
+
+        var NFish = GameObject.Instantiate(m_FishPrefab, Vector3.up * -100f, Quaternion.identity);
+        NFish.GetComponent<FishBehavior>().m_Direction = Random.Range(0, 2) == 0 ? -1 : 1;
+        NFish.GetComponent<FishBehavior>().InitializeValues(m_Infos[Random.Range(0, m_Infos.Length)]);
     }
 }
