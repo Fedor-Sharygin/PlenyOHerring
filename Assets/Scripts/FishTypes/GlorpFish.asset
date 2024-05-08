@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ceef26e1cd560046931dbc988d59ac4, type: 3}
+  m_Name: GlorpFish
+  m_EditorClassIdentifier: 
+  m_RecommendedCost: 0
+  m_Weight: 0
+  m_Taste: 
+  m_Minigame: 
+  m_FishAnimator: {fileID: 0}
+  m_FishOrderSprite: {fileID: 0}
+  m_MinSpeed: 0
+  m_MaxSpeed: 0
+  m_FishTargets:
+  - {fileID: 11400000, guid: 1e5f0c35c21b7644eb561c18e1764345, type: 2}
+  - {fileID: 11400000, guid: 0aa393648d8efcc4ab44510ff990a681, type: 2}
