@@ -17,6 +17,7 @@ MonoBehaviour:
   m_Taste: Bloop
   m_Minigame: 
   m_FishAnimator: {fileID: 9100000, guid: d351e9c73317f7c41ac615c9da609b07, type: 2}
+  m_FishOrderSprite: {fileID: 21300000, guid: af42e789ab4d8e7418211d548db6c8b4, type: 3}
   m_MinSpeed: 1.5
   m_MaxSpeed: 3.5
   m_FishTargets:

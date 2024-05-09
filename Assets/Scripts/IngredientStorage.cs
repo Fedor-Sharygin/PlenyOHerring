@@ -62,4 +62,6 @@ public class IngredientStorage
     }
 
     public static int PeekCount(FishInfo p_FishInfo) => m_FishCount[p_FishInfo];
+
+    public static int m_CurProfits = 0;
 }

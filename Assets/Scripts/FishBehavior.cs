@@ -15,8 +15,8 @@ public class FishBehavior : MonoBehaviour
     {
         m_Hook = GameObject.FindFirstObjectByType<PlayerHook>();
         m_FishInfo = p_Info;
-        SetNewPos(10 * m_Direction);
-        GetComponent<Animator>().runtimeAnimatorController = m_FishInfo.m_FishAnimator;
+        SetNewPos(20 * (-m_Direction));
+        //GetComponent<Animator>().runtimeAnimatorController = m_FishInfo.m_FishAnimator;
     }
 
     [SerializeField]
@@ -32,13 +32,13 @@ public class FishBehavior : MonoBehaviour
 
         transform.localPosition += Vector3.right * m_Speed * Time.deltaTime * m_Direction;
 
-        if (m_Direction == 1 && transform.localPosition.x >= 10)
+        if (m_Direction == 1 && transform.localPosition.x >= 20)
         {
-            SetNewPos(-10);
+            SetNewPos(-20);
         }
-        if (m_Direction == -1 && transform.localPosition.x <= -10)
+        if (m_Direction == -1 && transform.localPosition.x <= -20)
         {
-            SetNewPos(10);
+            SetNewPos(20);
         }
     }
 
@@ -53,12 +53,7 @@ public class FishBehavior : MonoBehaviour
     private Timer m_TugTimer;
     private void OnTriggerEnter2D(Collider2D p_Other)
     {
-        if (m_Hook == null)
-        {
-            return;
-        }
-
-        if (!p_Other.CompareTag("Player"))
+        if (m_Hook == null || !p_Other.CompareTag("Player") || m_Hook.m_FishHooked)
         {
             return;
         }

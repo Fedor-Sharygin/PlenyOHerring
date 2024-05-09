@@ -41,7 +41,7 @@ public class ObjectSocket : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; ++i)
         {
-            if (Vector3.SqrMagnitude(transform.GetChild(i).localPosition) <= .0001f)
+            if (Vector3.SqrMagnitude(transform.GetChild(i).localPosition) <= .001f)
             {
                 if (m_DestroyObjects)
                 {
@@ -107,6 +107,20 @@ public class ObjectSocket : MonoBehaviour
         }
 
         return transform.GetChild(0);
+    }
+    public Transform[] PeekObjs()
+    {
+        if (AvailableForStack)
+        {
+            return null;
+        }
+
+        Transform[] Ret = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            Ret[i] = transform.GetChild(i);
+        }
+        return Ret;
     }
 
     public void Lock(bool p_Locked = true)

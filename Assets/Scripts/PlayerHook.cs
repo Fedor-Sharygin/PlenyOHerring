@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHook : MonoBehaviour
 {
     public FishInfo m_CurrentBait;
-    private bool m_FishHooked = false;
+    public bool m_FishHooked = false;
 
     [SerializeField]
     private float m_HookSpeed = 2f;
@@ -49,17 +49,23 @@ public class PlayerHook : MonoBehaviour
                     if (m_CurrStrainPercent <= 0)
                     {
                         m_CurrentFish.Release();
+                        m_HookSocket.RemoveObjs();
                         m_FishHooked = false;
                         break;
                     }
                     else if (m_CurrStrainPercent >= 1)
                     {
-                        m_CurrentFish.GetCaught();
                         m_FishHooked = false;
                         foreach (var Fish in m_HookSocket.RemoveObjs())
                         {
+                            Fish.GetComponent<FishBehavior>()?.GetCaught();
                             m_StorageSocket?.ForceStack(Fish);
                         }
+                        foreach (var BB in FindObjectsOfType<BaitButton>())
+                        {
+                            BB.CheckButtonState();
+                        }
+                        SwitchBait(m_CurrentBait);
                         break;
                     }
 
@@ -91,13 +97,39 @@ public class PlayerHook : MonoBehaviour
         m_CurrentFish = p_FishObj;
         m_CurrentWeightHooked = p_CaughtFishInfo.m_Weight;
         m_CurrStrainPercent = .4f;
-
         m_HookSocket?.ForceStack(p_FishObj.transform);
     }
 
 
+    [SerializeField]
+    private FishInfo m_DefaultBait;
     public void SwitchBait(FishInfo p_BaitInfo)
     {
-        m_CurrentBait = p_BaitInfo;
+        if (p_BaitInfo != m_DefaultBait && IngredientStorage.PeekCount(p_BaitInfo) == 0)
+        {
+            m_CurrentBait = m_DefaultBait;
+            return;
+        }
+        if (m_CurrentBait == p_BaitInfo)
+        {
+            IngredientStorage.RemoveFishFromList(p_BaitInfo);
+        }
+        else
+        {
+            if (m_CurrentBait != m_DefaultBait)
+            {
+                IngredientStorage.AddFishToList(m_CurrentBait);
+            }
+            if (p_BaitInfo != m_DefaultBait)
+            {
+                IngredientStorage.RemoveFishFromList(p_BaitInfo);
+            }
+            m_CurrentBait = p_BaitInfo;
+        }
+
+        foreach (var BB in FindObjectsOfType<BaitButton>())
+        {
+            BB.CheckButtonState();
+        }
     }
 }

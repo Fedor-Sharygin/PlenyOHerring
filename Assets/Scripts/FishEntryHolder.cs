@@ -8,6 +8,10 @@ public class FishEntryHolder : MonoBehaviour
     [SerializeField]
     private Button m_FishButton;
     [SerializeField]
+    private Button m_PriceIncreaseButton;
+    [SerializeField]
+    private Button m_PriceDecreaseButton;
+    [SerializeField]
     private TMPro.TextMeshProUGUI m_CountText;
     [SerializeField]
     private TMPro.TextMeshProUGUI m_PriceText;
@@ -24,5 +28,12 @@ public class FishEntryHolder : MonoBehaviour
     public void SetPrice(int p_NewPrice)
     {
         m_PriceText.text = p_NewPrice.ToString();
+    }
+
+    public void DisableEntry()
+    {
+        m_FishButton.interactable = false;
+        m_PriceIncreaseButton.interactable = false;
+        m_PriceDecreaseButton.interactable = false;
     }
 }

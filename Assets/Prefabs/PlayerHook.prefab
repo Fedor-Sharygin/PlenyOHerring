@@ -178,12 +178,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CurrentBait: {fileID: 11400000, guid: 1e5f0c35c21b7644eb561c18e1764345, type: 2}
+  m_FishHooked: 0
   m_HookSpeed: 2
   m_MaxHeight: 1
   m_MinHeight: -4
   m_StorageSocket: {fileID: 0}
   m_CurrStrainPercent: 0
   m_HookSocket: {fileID: 935857205097288453}
+  m_DefaultBait: {fileID: 11400000, guid: 1e5f0c35c21b7644eb561c18e1764345, type: 2}
 --- !u!61 &4585684632503543386
 BoxCollider2D:
   m_ObjectHideFlags: 0

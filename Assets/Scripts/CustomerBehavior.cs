@@ -5,21 +5,32 @@ using UnityEngine;
 public class CustomerBehavior : MonoBehaviour
 {
     //ORDER MUST HAVE AT MOST ORDERSOCKETS COUNT OF FISH
+    public FishInfo[] m_FishOrder;
+    private int m_OrderIdx = 0;
     [SerializeField]
-    private FishInfo[] m_FishOrder;
+    private ObjectSocket m_OrderSocket;
     [SerializeField]
-    private ObjectSocket[] m_OrderSockets;
+    private ObjectSocket m_SpawnSocket;
+    [SerializeField]
+    private ObjectSocket m_DisposeSocket;
 
     [SerializeField]
     private GameObject m_FishSpritePrefab;
 
-    public void ShowOrder()
+    public void ShowOrderItem()
     {
-        for (int i = 0; i < m_FishOrder.Length; ++i)
+        if (m_OrderIdx == m_FishOrder.Length)
         {
-            var OrderedFish = GameObject.Instantiate(m_FishSpritePrefab, Vector3.zero, Quaternion.identity, transform);
-            OrderedFish.GetComponent<SpriteRenderer>().sprite = m_FishOrder[i].m_FishOrderSprite;
-            m_OrderSockets[i].Stack(OrderedFish.transform);
+            return;
         }
+
+        m_DisposeSocket.Stack(m_OrderSocket.RemoveObj());
+        var OrderItem = GameObject.Instantiate(m_FishSpritePrefab, Vector3.zero, Quaternion.identity, m_SpawnSocket.transform);
+        OrderItem.GetComponent<SpriteRenderer>().sprite = m_FishOrder[m_OrderIdx++].m_FishOrderSprite;
+    }
+
+    public void ReceiveOrderItem()
+    {
+
     }
 }

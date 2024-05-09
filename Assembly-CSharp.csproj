@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\CustomerBehavior.cs" />
     <Compile Include="Assets\Scripts\IngredientStorage.cs" />
     <Compile Include="Assets\Scripts\ObjectSocket.cs" />
+    <Compile Include="Assets\Scripts\CustomerManager.cs" />
+    <Compile Include="Assets\Scripts\BaitButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

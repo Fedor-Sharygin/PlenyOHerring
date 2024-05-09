@@ -104,10 +104,7 @@ public class Timer : MonoBehaviour
         UnPause();
     }
 
-    public bool IsPlaying()
-    {
-        return !m_Paused && !m_TimerEnded;
-    }
+    public bool IsPlaying() => !m_Paused && !m_TimerEnded;
 }
 
 

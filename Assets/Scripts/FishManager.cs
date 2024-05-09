@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FishManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_FishPrefab;
+    private GameObject[] m_FishPrefabs;
     [SerializeField]
     private FishInfo[] m_Infos;
     [SerializeField]
@@ -23,15 +24,19 @@ public class FishManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        IngredientStorage.InitializeStorage(m_Infos);
+    }
+
     public void SpawnFish()
     {
-        if (m_FishPrefab == null)
+        if (m_FishPrefabs.Length == 0)
         {
             return;
         }
 
-        var NFish = GameObject.Instantiate(m_FishPrefab, Vector3.up * -100f, Quaternion.identity);
-        NFish.GetComponent<FishBehavior>().m_Direction = Random.Range(0, 2) == 0 ? -1 : 1;
+        GameObject NFish = null;
 
         float RandomWeightChoice = Random.Range(0f, m_TotalWeight);
         for (int i = 0; i < m_FishRandomWeights.Length; ++i)
@@ -41,9 +46,17 @@ public class FishManager : MonoBehaviour
             {
                 continue;
             }
-
+            NFish = GameObject.Instantiate(m_FishPrefabs[i], Vector3.up * -100f, Quaternion.identity);
+            NFish.GetComponent<FishBehavior>().m_Direction = Random.Range(0, 2) == 0 ? -1 : 1;
             NFish.GetComponent<FishBehavior>().InitializeValues(m_Infos[i]);
+            NFish.transform.localScale = new Vector3(NFish.transform.localScale.x * NFish.GetComponent<FishBehavior>().m_Direction, NFish.transform.localScale.y, NFish.transform.localScale.z);
             break;
         }
+    }
+
+
+    public void LoadStoreLevel()
+    {
+        SceneManager.LoadScene("KitchenScene");
     }
 }
