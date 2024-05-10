@@ -152,6 +152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7226994829310343217}
     m_Modifications:
+    - target: {fileID: -9041832551858791027, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
+      propertyPath: m_SortingOrder
+      value: 92
+      objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
       propertyPath: m_Name
       value: GlorpFish_GIMP1715117927
@@ -248,6 +252,18 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Extent.y
       value: 0.63807994
       objectReference: {fileID: 0}
+    - target: {fileID: 1618771667263037758, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
+      propertyPath: m_SortingOrder
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359103177601667974, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
+      propertyPath: m_SortingOrder
+      value: 93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716269725983708482, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
+      propertyPath: m_SortingOrder
+      value: 96
+      objectReference: {fileID: 0}
     - target: {fileID: 7011125219650091768, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: 0.00090035796
@@ -280,6 +296,10 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Extent.y
       value: 0.506615
       objectReference: {fileID: 0}
+    - target: {fileID: 7643961964286683367, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
+      propertyPath: m_SortingOrder
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 7865728278067164518, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: -0.00000071525574
@@ -311,6 +331,14 @@ PrefabInstance:
     - target: {fileID: 8311698044202013379, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
       propertyPath: m_Bounds.m_Extent.y
       value: 0.6950001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616756149433463755, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
+      propertyPath: m_SortingOrder
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686579473324182927, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}
+      propertyPath: m_SortingOrder
+      value: 91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 1a3352097af8a5644baa304a5a39f238, type: 3}

@@ -6,6 +6,13 @@ public class ShopController : MonoBehaviour
 {
     private static bool m_Initialized = false;
     private static int[] m_CurrentPrices;
+    public static int[] CurrentPrices
+    {
+        get
+        {
+            return m_CurrentPrices;
+        }
+    }
 
     private static void InitializeShopPrices()
     {

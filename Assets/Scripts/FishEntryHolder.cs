@@ -23,7 +23,7 @@ public class FishEntryHolder : MonoBehaviour
 
     public void SetCount(int p_NewCount)
     {
-        m_CountText.text = p_NewCount.ToString();
+        m_CountText.text = "x " + p_NewCount.ToString();
     }
     public void SetPrice(int p_NewPrice)
     {

@@ -152,6 +152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1558269809441521075}
     m_Modifications:
+    - target: {fileID: -9041832551858791027, guid: 82d1cdc9b2bbad84cb7c9e5c7b7f6744, type: 3}
+      propertyPath: m_SortingOrder
+      value: 71
+      objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 82d1cdc9b2bbad84cb7c9e5c7b7f6744, type: 3}
       propertyPath: m_Name
       value: SchwarkFish1715126491
@@ -275,6 +279,18 @@ PrefabInstance:
     - target: {fileID: 7321001724001963373, guid: 82d1cdc9b2bbad84cb7c9e5c7b7f6744, type: 3}
       propertyPath: m_Bounds.m_Extent.y
       value: 0.76499987
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643961964286683367, guid: 82d1cdc9b2bbad84cb7c9e5c7b7f6744, type: 3}
+      propertyPath: m_SortingOrder
+      value: 73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616756149433463755, guid: 82d1cdc9b2bbad84cb7c9e5c7b7f6744, type: 3}
+      propertyPath: m_SortingOrder
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686579473324182927, guid: 82d1cdc9b2bbad84cb7c9e5c7b7f6744, type: 3}
+      propertyPath: m_SortingOrder
+      value: 72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 82d1cdc9b2bbad84cb7c9e5c7b7f6744, type: 3}
