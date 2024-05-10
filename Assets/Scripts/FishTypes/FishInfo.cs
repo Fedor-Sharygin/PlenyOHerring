@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FishInfo", menuName = "Descriptors/Fish", order = 1)]
 public class FishInfo : ScriptableObject
 {
+    public int m_ID;
+
+    [Space(10)]
     public int      m_RecommendedCost;
     public float    m_Weight;
     public string   m_Taste;

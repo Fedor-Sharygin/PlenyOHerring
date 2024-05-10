@@ -105,7 +105,7 @@ public class PlayerHook : MonoBehaviour
     private FishInfo m_DefaultBait;
     public void SwitchBait(FishInfo p_BaitInfo)
     {
-        if (m_CurrentFish == p_BaitInfo)
+        if (m_CurrentBait.m_ID == p_BaitInfo.m_ID)
         {
             return;
         }

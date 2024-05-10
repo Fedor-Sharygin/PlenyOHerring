@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ceef26e1cd560046931dbc988d59ac4, type: 3}
   m_Name: WhralFish
   m_EditorClassIdentifier: 
+  m_ID: 2
   m_RecommendedCost: 80
   m_Weight: 50
   m_Taste: 
