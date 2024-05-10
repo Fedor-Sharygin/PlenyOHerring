@@ -93,6 +93,6 @@ public class CustomerManager : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene("FishingLevel");
+        SceneManager.LoadScene("DayStartScene");
     }
 }

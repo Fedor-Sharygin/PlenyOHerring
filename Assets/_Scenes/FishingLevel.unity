@@ -1459,6 +1459,7 @@ MonoBehaviour:
   - 30
   - 8
   - 3
+  m_FishSpawnTimer: {fileID: 1764739480}
 --- !u!4 &1764739482
 Transform:
   m_ObjectHideFlags: 0

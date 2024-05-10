@@ -7,9 +7,17 @@ public class DayManager : MonoBehaviour
 {
     [SerializeField]
     private FishInfo[] m_Infos;
+    [SerializeField]
+    private TMPro.TextMeshProUGUI m_DayText;
+    [SerializeField]
+    private TMPro.TextMeshProUGUI m_QuotaText;
     private void Awake()
     {
         IngredientStorage.InitializeStorage(m_Infos);
+        IngredientStorage.UpdateQuota();
+
+        m_DayText.text += IngredientStorage.m_CurDay.ToString();
+        m_QuotaText.text += Mathf.FloorToInt(IngredientStorage.m_CurQuota).ToString();
     }
 
     private Dictionary<FishInfo, int> m_FishCount;
