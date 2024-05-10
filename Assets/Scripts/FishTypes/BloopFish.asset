@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ceef26e1cd560046931dbc988d59ac4, type: 3}
   m_Name: BloopFish
   m_EditorClassIdentifier: 
+  m_ID: 0
   m_RecommendedCost: 5
-  m_Weight: 1
+  m_Weight: 10
   m_Taste: Bloop
   m_Minigame: 
   m_FishAnimator: {fileID: 9100000, guid: d351e9c73317f7c41ac615c9da609b07, type: 2}

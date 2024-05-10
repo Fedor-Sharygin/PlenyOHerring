@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ID: 2
   m_RecommendedCost: 80
-  m_Weight: 50
+  m_Weight: 80
   m_Taste: 
   m_Minigame: 
   m_FishAnimator: {fileID: 0}

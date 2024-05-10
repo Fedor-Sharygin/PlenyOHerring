@@ -38,15 +38,15 @@ public class IngredientStorage
         m_Initialized = true;
     }
 
-    public static void AddFishToList(FishInfo p_FishInfo)
+    public static void AddFishToList(FishInfo p_FishInfo, int p_Count = 1)
     {
         if (m_FishCount.TryGetValue(p_FishInfo, out int Count))
         {
-            m_FishCount[p_FishInfo] = Count + 1;
+            m_FishCount[p_FishInfo] = Count + p_Count;
         }
         else
         {
-            m_FishCount.Add(p_FishInfo, 1);
+            m_FishCount.Add(p_FishInfo, p_Count);
         }
     }
 
@@ -63,5 +63,48 @@ public class IngredientStorage
 
     public static int PeekCount(FishInfo p_FishInfo) => m_FishCount[p_FishInfo];
 
+
+    //DAILY INFO/BONUSES
+    public static int m_CurDay = 0;
+    public static float m_CurQuota = 0f;
     public static int m_CurProfits = 0;
+    public static void UpdateQuota()
+    {
+        ++m_CurDay;
+        m_CurProfits -= Mathf.FloorToInt(m_CurQuota);
+        m_CurQuota += m_CurDay * Random.Range(20f, 50f);
+        ResetBonuses();
+    }
+
+    public static void ResetBonuses()
+    {
+        HookSpeedBonus = 1f;
+        CustomerPayBonus = 1f;
+        FishSpawnBonus = 1f;
+        FishTugBonus = 1f;
+    }
+
+    public static float HookSpeedBonus { get; private set; } = 1f;
+    public static void IncreaseHookSpeedBonus()
+    {
+        HookSpeedBonus *= 2f;
+    }
+
+    public static float CustomerPayBonus { get; private set; } = 1f;
+    public static void IncreaseCustomerPayBonus()
+    {
+        CustomerPayBonus *= 1.5f;
+    }
+
+    public static float FishSpawnBonus { get; private set; } = 1f;
+    public static void IncreaseFishSpawnBonus()
+    {
+        FishSpawnBonus *= .9f;
+    }
+
+    public static float FishTugBonus { get; private set; } = 1f;
+    public static void IncreaseFishTugBonus()
+    {
+        FishTugBonus *= 1.2f;
+    }
 }

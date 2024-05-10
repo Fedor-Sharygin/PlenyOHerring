@@ -27,7 +27,7 @@ public class PlayerHook : MonoBehaviour
                 {
                     if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
                     {
-                        transform.localPosition += Vector3.up * m_HookSpeed * Time.deltaTime;
+                        transform.localPosition += Vector3.up * IngredientStorage.HookSpeedBonus * m_HookSpeed * Time.deltaTime;
                         if (transform.localPosition.y > m_MaxHeight)
                         {
                             transform.localPosition = new Vector3(transform.localPosition.x, m_MaxHeight);
@@ -35,7 +35,7 @@ public class PlayerHook : MonoBehaviour
                     }
                     if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
                     {
-                        transform.localPosition -= Vector3.up * m_HookSpeed * Time.deltaTime;
+                        transform.localPosition -= Vector3.up * IngredientStorage.HookSpeedBonus * m_HookSpeed * Time.deltaTime;
                         if (transform.localPosition.y < m_MinHeight)
                         {
                             transform.localPosition = new Vector3(transform.localPosition.x, m_MinHeight);
@@ -51,6 +51,7 @@ public class PlayerHook : MonoBehaviour
                         m_CurrentFish.Release();
                         m_HookSocket.RemoveObjs();
                         m_FishHooked = false;
+                        SwitchBait(m_CurrentBait, true);
                         break;
                     }
                     else if (m_CurrStrainPercent >= 1)
@@ -65,13 +66,13 @@ public class PlayerHook : MonoBehaviour
                         {
                             BB.CheckButtonState();
                         }
-                        SwitchBait(m_CurrentBait);
+                        SwitchBait(m_CurrentBait, true);
                         break;
                     }
 
                     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
                     {
-                        AddStrainPercent((1 - m_CurrentWeightHooked / 100f) / 2f);
+                        AddStrainPercent((1 - m_CurrentWeightHooked / 100f) / 4f * IngredientStorage.FishTugBonus);
                     }
                 }
                 break;
@@ -103,9 +104,9 @@ public class PlayerHook : MonoBehaviour
 
     [SerializeField]
     private FishInfo m_DefaultBait;
-    public void SwitchBait(FishInfo p_BaitInfo)
+    public void SwitchBait(FishInfo p_BaitInfo, bool p_Force = false)
     {
-        if (m_CurrentBait.m_ID == p_BaitInfo.m_ID)
+        if (!p_Force && m_CurrentBait.m_ID == p_BaitInfo.m_ID)
         {
             return;
         }

@@ -24,10 +24,15 @@ public class FishManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private Timer m_FishSpawnTimer;
     private void Awake()
     {
         IngredientStorage.InitializeStorage(m_Infos);
+        m_FishSpawnTimer.TimerModifier = IngredientStorage.FishSpawnBonus;
     }
+
+
 
     public void SpawnFish()
     {

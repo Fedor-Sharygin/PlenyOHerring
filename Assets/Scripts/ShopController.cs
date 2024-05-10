@@ -48,8 +48,15 @@ public class ShopController : MonoBehaviour
                 m_FishEntries[i].DisableEntry();
             }
         }
+        UpdateQuota();
     }
 
+    [SerializeField]
+    private TMPro.TextMeshProUGUI m_QuotaText;
+    private void UpdateQuota()
+    {
+        m_QuotaText.text = IngredientStorage.m_CurProfits.ToString() + '/' + Mathf.FloorToInt(IngredientStorage.m_CurQuota).ToString();
+    }
 
     public void IncreasePrice(int p_Idx)
     {
@@ -131,7 +138,8 @@ public class ShopController : MonoBehaviour
             m_CustomerSocket.Stack(m_TableSocket.RemoveObj());
             m_ItemState = -1;
             m_CurCustomer.GetComponent<CustomerBehavior>().ReceiveOrderItem();
-            IngredientStorage.m_CurProfits += m_CurrentPrices[m_CurItemIdx];
+            IngredientStorage.m_CurProfits += Mathf.CeilToInt(m_CurrentPrices[m_CurItemIdx] * IngredientStorage.CustomerPayBonus);
+            UpdateQuota();
             return;
         }
         m_ItemState++;

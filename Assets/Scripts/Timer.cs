@@ -33,6 +33,15 @@ public class Timer : MonoBehaviour
 
     private bool m_Paused = false;
 
+    private float m_TimerModifier = 1f;
+    public float TimerModifier
+    {
+        set
+        {
+            m_TimerModifier = value;
+        }
+    }
+
     private void Awake()
     {
         //GlobalNamespace.CustomComponentNames.AddComponent(this);
@@ -69,6 +78,7 @@ public class Timer : MonoBehaviour
         {
             m_CurTimeLeft = UnityEngine.Random.Range(m_MinTimer, m_MaxTimer);
         }
+        m_CurTimeLeft *= m_TimerModifier;
     }
 
     public void ExecuteOnEnd()

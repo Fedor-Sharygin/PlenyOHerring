@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ceef26e1cd560046931dbc988d59ac4, type: 3}
   m_Name: BasicFishBait
   m_EditorClassIdentifier: 
+  m_ID: -1
   m_RecommendedCost: 0
   m_Weight: 0
   m_Taste: 
   m_Minigame: 
+  m_FishAnimator: {fileID: 0}
+  m_FishOrderSprite: {fileID: 0}
+  m_MinSpeed: 0
+  m_MaxSpeed: 0
+  m_FishTargets: []
