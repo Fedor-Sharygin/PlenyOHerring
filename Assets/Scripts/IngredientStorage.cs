@@ -65,6 +65,9 @@ public class IngredientStorage
 
 
     //DAILY INFO/BONUSES
+    public delegate void GameOverDelegate();
+    public static event GameOverDelegate m_GameOverEvent;
+
     public static int m_CurDay = 0;
     public static float m_CurQuota = 0f;
     public static int m_CurProfits = 0;
@@ -72,6 +75,14 @@ public class IngredientStorage
     {
         ++m_CurDay;
         m_CurProfits -= Mathf.FloorToInt(m_CurQuota);
+        if (m_CurProfits < 0f)
+        {
+            m_CurDay = 0;
+            m_CurQuota = 0f;
+            m_CurProfits = 0;
+            m_GameOverEvent();
+            return;
+        }
         m_CurQuota += m_CurDay * Random.Range(20f, 50f);
         ResetBonuses();
     }

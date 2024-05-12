@@ -5,6 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class DayManager : MonoBehaviour
 {
+
+    private static bool m_SubscribedToGameOver = false;
+    private static void SubscribeToGameOver()
+    {
+        if (m_SubscribedToGameOver)
+        {
+            return;
+        }
+
+        IngredientStorage.m_GameOverEvent += QuotaNotMetActions;
+        m_SubscribedToGameOver = true;
+    }
+    private static void QuotaNotMetActions()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     [SerializeField]
     private FishInfo[] m_Infos;
     [SerializeField]
@@ -13,11 +30,17 @@ public class DayManager : MonoBehaviour
     private TMPro.TextMeshProUGUI m_QuotaText;
     private void Awake()
     {
+        SubscribeToGameOver();
         IngredientStorage.InitializeStorage(m_Infos);
         IngredientStorage.UpdateQuota();
 
         m_DayText.text += IngredientStorage.m_CurDay.ToString();
         m_QuotaText.text += Mathf.FloorToInt(IngredientStorage.m_CurQuota).ToString();
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 
     private Dictionary<FishInfo, int> m_FishCount;

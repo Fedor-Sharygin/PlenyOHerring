@@ -68,6 +68,7 @@ public class CustomerManager : MonoBehaviour
                 float Decr = Mathf.Floor(.75f * (200 - ShopController.CurrentPrices[j]));
                 m_CurFishSpawnWeights[j] -= Decr;
                 TotalWeight -= Decr;
+                break;
             }
         }
         m_CurShopController.m_CurCustomer = Customer;
