@@ -106,11 +106,16 @@ public class PlayerHook : MonoBehaviour
     private FishInfo m_DefaultBait;
     public void SwitchBait(FishInfo p_BaitInfo, bool p_Force = false)
     {
-        if (!p_Force && m_CurrentBait.m_ID == p_BaitInfo.m_ID)
+        if (m_FishHooked)
         {
             return;
         }
 
+
+        if (!p_Force && m_CurrentBait.m_ID == p_BaitInfo.m_ID)
+        {
+            return;
+        }
         if (p_BaitInfo != m_DefaultBait && IngredientStorage.PeekCount(p_BaitInfo) == 0)
         {
             m_CurrentBait = m_DefaultBait;

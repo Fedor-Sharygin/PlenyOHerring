@@ -1222,8 +1222,8 @@ MonoBehaviour:
   m_ResetOnEnd: 0
   m_StartOnAwake: 1
   m_RandomTimer: 1
-  m_MinTimer: 300
-  m_MaxTimer: 360
+  m_MinTimer: 100
+  m_MaxTimer: 140
   m_EndActions:
     m_PersistentCalls:
       m_Calls:

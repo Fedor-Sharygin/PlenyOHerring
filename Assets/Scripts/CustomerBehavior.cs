@@ -17,10 +17,23 @@ public class CustomerBehavior : MonoBehaviour
     [SerializeField]
     private GameObject m_FishSpritePrefab;
 
+    private bool m_Done = false;
+    public void TriggerNextClient()
+    {
+        if (!m_Done)
+        {
+            return;
+        }
+
+        Destroy(gameObject);
+    }
+
     public void ShowOrderItem()
     {
         if (m_OrderIdx == m_FishOrder.Length || m_FishOrder[m_OrderIdx] == null)
         {
+            m_Done = true;
+            GetComponent<Animator>().SetTrigger("Leave");
             return;
         }
 

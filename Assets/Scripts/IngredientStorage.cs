@@ -80,6 +80,12 @@ public class IngredientStorage
             m_CurDay = 0;
             m_CurQuota = 0f;
             m_CurProfits = 0;
+
+            foreach (var FI in m_FishCount)
+            {
+                m_FishCount[FI.Key] = 0;
+            }
+
             m_GameOverEvent();
             return;
         }
