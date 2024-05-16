@@ -19,6 +19,8 @@ public class PlayerHook : MonoBehaviour
 
     [SerializeField]
     private ObjectSocket m_StorageSocket;
+    [SerializeField]
+    private GameObject m_TugOMeter;
     private void Update()
     {
         switch (m_FishHooked)
@@ -52,6 +54,7 @@ public class PlayerHook : MonoBehaviour
                         m_HookSocket.RemoveObjs();
                         m_FishHooked = false;
                         SwitchBait(m_CurrentBait, true);
+                        m_TugOMeter.SetActive(false);
                         break;
                     }
                     else if (m_CurrStrainPercent >= 1)
@@ -67,6 +70,7 @@ public class PlayerHook : MonoBehaviour
                             BB.CheckButtonState();
                         }
                         SwitchBait(m_CurrentBait, true);
+                        m_TugOMeter.SetActive(false);
                         break;
                     }
 
@@ -79,10 +83,13 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private Transform m_TugOMeterPercent;
     public float m_CurrStrainPercent;
     public void AddStrainPercent(float p_StrainPercent)
     {
         m_CurrStrainPercent += p_StrainPercent;
+        m_TugOMeterPercent.localScale = Vector3.one * Mathf.Max(m_CurrStrainPercent, 0f);
     }
 
     [SerializeField]
@@ -99,6 +106,8 @@ public class PlayerHook : MonoBehaviour
         m_CurrentWeightHooked = p_CaughtFishInfo.m_Weight;
         m_CurrStrainPercent = .4f;
         m_HookSocket?.ForceStack(p_FishObj.transform);
+        m_TugOMeter.SetActive(true);
+        m_TugOMeterPercent.localScale = Vector3.one * m_CurrStrainPercent;
     }
 
 

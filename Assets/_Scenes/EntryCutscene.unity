@@ -1615,7 +1615,7 @@ MonoBehaviour:
   m_LetterDisplayTimer: {fileID: 1904899759}
   m_CharacterVoices:
   - m_CharacterName: Computer
-    m_CharacterVoice: {fileID: 8300000, guid: 3100434b1e7993143a2f1dfe7d41e03f, type: 3}
+    m_CharacterVoice: {fileID: 8300000, guid: ca4403ea05f01554b8868698ad70d9f4, type: 3}
   - m_CharacterName: IGPB
     m_CharacterVoice: {fileID: 8300000, guid: 202ffd4e68a81a447a41505c72d8177c, type: 3}
   - m_CharacterName: Pleny
@@ -1632,6 +1632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7d1e2cc1a724a489fb44d468163ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TimerDisplay: {fileID: 0}
+  m_TimerDisplayMode: 2
   m_TimerSeconds: 0.02
   m_ResetOnEnd: 1
   m_StartOnAwake: 0
