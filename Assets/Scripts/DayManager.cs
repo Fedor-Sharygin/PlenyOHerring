@@ -38,9 +38,34 @@ public class DayManager : MonoBehaviour
         m_QuotaText.text += Mathf.FloorToInt(IngredientStorage.m_CurQuota).ToString();
     }
 
-    private void OnDestroy()
+    [SerializeField]
+    private BaitButton[] m_Buttons;
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            UseFish(m_Infos[0]);
+            IncreaseHookSpeedBonus();
+            m_Buttons[0].CheckButtonState();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            UseFish(m_Infos[1]);
+            IncreaseHookSpeedBonus();
+            m_Buttons[1].CheckButtonState();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            UseFish(m_Infos[2]);
+            IncreaseHookSpeedBonus();
+            m_Buttons[2].CheckButtonState();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            UseFish(m_Infos[3]);
+            IncreaseHookSpeedBonus();
+            m_Buttons[3].CheckButtonState();
+        }
     }
 
     private Dictionary<FishInfo, int> m_FishCount = new Dictionary<FishInfo, int>();

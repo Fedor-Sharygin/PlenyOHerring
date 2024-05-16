@@ -97,6 +97,11 @@ public class ShopController : MonoBehaviour
             return;
         }
 
+        if (m_CurCustomer.GetComponent<CustomerBehavior>().CurItem != IngredientStorage.FishArray[p_Idx])
+        {
+            return;
+        }
+
         if (!IngredientStorage.RemoveFishFromList(IngredientStorage.FishArray[p_Idx]))
         {
             return;
@@ -124,6 +129,23 @@ public class ShopController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             UpdateItemState();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            TakeFish(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            TakeFish(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            TakeFish(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            TakeFish(3);
         }
     }
 

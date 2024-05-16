@@ -7,6 +7,19 @@ public class CustomerBehavior : MonoBehaviour
     //ORDER MUST HAVE AT MOST ORDERSOCKETS COUNT OF FISH
     public FishInfo[] m_FishOrder;
     private int m_OrderIdx = 0;
+    private bool m_ShowingItem = false;
+    public FishInfo CurItem
+    {
+        get
+        {
+             if (!m_ShowingItem || m_OrderIdx >= m_FishOrder.Length)
+            {
+                return null;
+            }
+
+            return m_FishOrder[m_OrderIdx];
+        }
+    }
     [SerializeField]
     private ObjectSocket m_OrderSocket;
     [SerializeField]
@@ -40,6 +53,7 @@ public class CustomerBehavior : MonoBehaviour
         var OrderItem = GameObject.Instantiate(m_FishSpritePrefab, Vector3.zero, Quaternion.identity, m_SpawnSocket.transform);
         OrderItem.GetComponent<SpriteRenderer>().sprite = m_FishOrder[m_OrderIdx].m_FishOrderSprite;
         m_OrderSocket.Stack(OrderItem.transform);
+        m_ShowingItem = true;
     }
 
     //public int[] m_ItemPrices;
@@ -52,5 +66,6 @@ public class CustomerBehavior : MonoBehaviour
         m_OrderTimer?.ResetTimer();
         m_OrderTimer?.Play();
         m_OrderIdx++;
+        m_ShowingItem = false;
     }
 }

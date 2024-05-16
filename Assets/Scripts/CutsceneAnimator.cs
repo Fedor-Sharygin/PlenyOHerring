@@ -96,6 +96,10 @@ public class CutsceneAnimator : MonoBehaviour
     private bool m_Done = false;
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadNextLevel();
+        }
         if (m_Done || m_DisplayTextIdx != -1)
         {
             return;

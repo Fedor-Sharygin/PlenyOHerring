@@ -17,4 +17,31 @@ public class BaitManager : MonoBehaviour
     {
         m_Hook.SwitchBait(p_FishInfo);
     }
+
+
+    [SerializeField]
+    private FishInfo[] m_Infos;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SwitchBait(m_Infos[0]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SwitchBait(m_Infos[1]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SwitchBait(m_Infos[2]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SwitchBait(m_Infos[3]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SwitchBait(m_Infos[4]);
+        }
+    }
 }
