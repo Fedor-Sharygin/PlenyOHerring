@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainMenu.unity
     guid: 5c405f2fb297aa142aac184c418a2e70
   - enabled: 1
+    path: Assets/_Scenes/EntryCutscene.unity
+    guid: 7d96a864d79b37443a846117fd50b7d5
+  - enabled: 1
     path: Assets/_Scenes/DayStartScene.unity
     guid: f9ef083faf764e2468d094647eb0d939
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/KitchenScene.unity
     guid: ca6c7c83e7051e84aad7b00ca70df37e
+  - enabled: 1
+    path: Assets/_Scenes/BlackHoleGameOver.unity
+    guid: 39276520870605649ae68df2c0c77856
   m_configObjects: {}

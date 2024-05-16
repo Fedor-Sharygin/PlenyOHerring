@@ -33,6 +33,7 @@ public class ShopController : MonoBehaviour
     private FishInfo[] m_FishArray;
     [SerializeField]
     private FishEntryHolder[] m_FishEntries;
+    private Animator m_FishAnimator;
     private void Awake()
     {
         IngredientStorage.InitializeStorage(m_FishArray);
@@ -49,6 +50,7 @@ public class ShopController : MonoBehaviour
             }
         }
         UpdateQuota();
+
     }
 
     [SerializeField]
@@ -102,10 +104,12 @@ public class ShopController : MonoBehaviour
 
         //SPAWN THE FISH TO THE TABLE
         var FishItem = GameObject.Instantiate(m_FishPrefab, Vector3.zero, Quaternion.identity, m_ItemSpawnSocket.transform);
+        FishItem.GetComponentInChildren<SpriteRenderer>().sprite = IngredientStorage.FishArray[p_Idx].m_FishOrderSprite;
         m_TableSocket.Stack(m_ItemSpawnSocket.RemoveObj());
         m_ItemState = 0;
         m_FishEntries[p_Idx].SetCount(IngredientStorage.PeekCount(IngredientStorage.FishArray[p_Idx]));
         m_CurItemIdx = p_Idx;
+        m_FishAnimator = FishItem.GetComponent<Animator>();
 
         if (IngredientStorage.PeekCount(IngredientStorage.FishArray[p_Idx]) != 0)
         {
@@ -142,6 +146,8 @@ public class ShopController : MonoBehaviour
             UpdateQuota();
             return;
         }
+
+        m_FishAnimator?.SetTrigger(m_ItemState.ToString());
         m_ItemState++;
     }
 }

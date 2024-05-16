@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\PlayerHook.cs" />
     <Compile Include="Assets\Scripts\FishEntryHolder.cs" />
     <Compile Include="Assets\Scripts\BaitButton.cs" />
+    <Compile Include="Assets\Scripts\CutsceneAnimator.cs" />
     <Compile Include="Assets\Scripts\FishBehavior.cs" />
     <Compile Include="Assets\Scripts\CustomerManager.cs" />
     <Compile Include="Assets\Scripts\BaitManager.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="Assets\Scripts\CustomerBehavior.cs" />
     <Compile Include="Assets\Scripts\IngredientStorage.cs" />
     <Compile Include="Assets\Scripts\ObjectSocket.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
+    <Compile Include="Assets\Scripts\MusicManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

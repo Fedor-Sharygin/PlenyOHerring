@@ -75,21 +75,21 @@ public class IngredientStorage
     {
         ++m_CurDay;
         m_CurProfits -= Mathf.FloorToInt(m_CurQuota);
-        if (m_CurProfits < 0f)
+        if (m_CurProfits < 0)
         {
             m_CurDay = 0;
             m_CurQuota = 0f;
             m_CurProfits = 0;
 
-            foreach (var FI in m_FishCount)
+            foreach (var FI in FishArray)
             {
-                m_FishCount[FI.Key] = 0;
+                m_FishCount[FI] = 0;
             }
 
             m_GameOverEvent();
             return;
         }
-        m_CurQuota += m_CurDay * Random.Range(20f, 50f);
+        m_CurQuota += m_CurDay * Random.Range(50f, 100f);
         ResetBonuses();
     }
 
@@ -104,13 +104,13 @@ public class IngredientStorage
     public static float HookSpeedBonus { get; private set; } = 1f;
     public static void IncreaseHookSpeedBonus()
     {
-        HookSpeedBonus *= 2f;
+        HookSpeedBonus *= 1.2f;
     }
 
     public static float CustomerPayBonus { get; private set; } = 1f;
     public static void IncreaseCustomerPayBonus()
     {
-        CustomerPayBonus *= 1.5f;
+        CustomerPayBonus *= 1.05f;
     }
 
     public static float FishSpawnBonus { get; private set; } = 1f;
@@ -122,6 +122,6 @@ public class IngredientStorage
     public static float FishTugBonus { get; private set; } = 1f;
     public static void IncreaseFishTugBonus()
     {
-        FishTugBonus *= 1.2f;
+        FishTugBonus *= 1.5f;
     }
 }

@@ -8,7 +8,7 @@ public class PlayerHook : MonoBehaviour
     public bool m_FishHooked = false;
 
     [SerializeField]
-    private float m_HookSpeed = 2f;
+    private float m_HookSpeed = 1.35f;
     [SerializeField]
     private float m_MaxHeight = 0f;
     [SerializeField]
@@ -104,6 +104,8 @@ public class PlayerHook : MonoBehaviour
 
     [SerializeField]
     private FishInfo m_DefaultBait;
+    [SerializeField]
+    private SpriteRenderer m_BaitSprite;
     public void SwitchBait(FishInfo p_BaitInfo, bool p_Force = false)
     {
         if (m_FishHooked)
@@ -119,6 +121,7 @@ public class PlayerHook : MonoBehaviour
         if (p_BaitInfo != m_DefaultBait && IngredientStorage.PeekCount(p_BaitInfo) == 0)
         {
             m_CurrentBait = m_DefaultBait;
+            m_BaitSprite.sprite = m_CurrentBait.m_FishOrderSprite;
             return;
         }
         if (m_CurrentBait == p_BaitInfo)
@@ -142,5 +145,6 @@ public class PlayerHook : MonoBehaviour
         {
             BB.CheckButtonState();
         }
+        m_BaitSprite.sprite = m_CurrentBait.m_FishOrderSprite;
     }
 }

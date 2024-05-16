@@ -19,7 +19,7 @@ public class DayManager : MonoBehaviour
     }
     private static void QuotaNotMetActions()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("BlackHoleGameOver");
     }
 
     [SerializeField]
@@ -43,7 +43,7 @@ public class DayManager : MonoBehaviour
         
     }
 
-    private Dictionary<FishInfo, int> m_FishCount;
+    private Dictionary<FishInfo, int> m_FishCount = new Dictionary<FishInfo, int>();
 
     public void UseFish(FishInfo p_Fish)
     {
@@ -60,7 +60,10 @@ public class DayManager : MonoBehaviour
         foreach (var FIC in m_FishCount)
         {
             IngredientStorage.AddFishToList(FIC.Key, FIC.Value);
-            m_FishCount[FIC.Key] = 0;
+        }
+        foreach (var FI in IngredientStorage.FishArray)
+        {
+            m_FishCount[FI] = 0;
         }
         IngredientStorage.ResetBonuses();
     }
@@ -86,5 +89,12 @@ public class DayManager : MonoBehaviour
     public void ProceedWithDay()
     {
         SceneManager.LoadScene("FishingLevel");
+    }
+
+    public void GiveUp()
+    {
+        IngredientStorage.m_CurProfits = -Mathf.FloorToInt(IngredientStorage.m_CurQuota);
+        IngredientStorage.UpdateQuota();
+        //SceneManager.LoadScene("BlackHoleGameOver");
     }
 }

@@ -18,7 +18,7 @@ MonoBehaviour:
   m_Taste: 
   m_Minigame: 
   m_FishAnimator: {fileID: 0}
-  m_FishOrderSprite: {fileID: 0}
+  m_FishOrderSprite: {fileID: 21300000, guid: 2437fa5f4496a2045a67d81e0bbe7b11, type: 3}
   m_MinSpeed: 0
   m_MaxSpeed: 0
   m_FishTargets: []
