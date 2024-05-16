@@ -12,6 +12,19 @@ using UnityEditor;
 public class Timer : MonoBehaviour
 {
     [SerializeField]
+    private TMPro.TextMeshProUGUI m_TimerDisplay;
+    public enum DisplayMode
+    {
+        FLOAT_DISPLAY,
+        INT_DISPLAY,
+
+        DEFAULT
+    }
+    [SerializeField]
+    private DisplayMode m_TimerDisplayMode = DisplayMode.DEFAULT;
+
+    [Space(10)]
+    [SerializeField]
     private float m_TimerSeconds = 20f;
     public float m_CurTimeLeft { private set; get; }
 
@@ -67,6 +80,24 @@ public class Timer : MonoBehaviour
         if (m_CurTimeLeft <= 0f)
         {
             StartCoroutine("ExecuteOnEnd");
+        }
+
+        if (m_TimerDisplay == null)
+        {
+            return;
+        }
+        switch (m_TimerDisplayMode)
+        {
+            case DisplayMode.INT_DISPLAY:
+                {
+                    m_TimerDisplay.text = Mathf.FloorToInt(m_CurTimeLeft).ToString();
+                }
+                break;
+            case DisplayMode.FLOAT_DISPLAY:
+                {
+                    m_TimerDisplay.text = m_CurTimeLeft.ToString();
+                }
+                break;
         }
     }
 
