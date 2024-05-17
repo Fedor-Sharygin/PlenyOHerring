@@ -19,6 +19,7 @@ MonoBehaviour:
   m_Minigame: 
   m_FishAnimator: {fileID: 0}
   m_FishOrderSprite: {fileID: 21300000, guid: d016ddaf20d71da4886951da44270822, type: 3}
+  m_TextColor: {r: 0.56078434, g: 1, b: 0.9882353, a: 1}
   m_MinSpeed: 1
   m_MaxSpeed: 3.4
   m_FishTargets:

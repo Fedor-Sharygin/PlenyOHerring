@@ -56,9 +56,17 @@ public class CustomerBehavior : MonoBehaviour
         m_ShowingItem = true;
     }
 
+    private AudioSource m_AudioSource;
+    private void Awake()
+    {
+        m_AudioSource = GetComponent<AudioSource>();
+    }
+
     //public int[] m_ItemPrices;
     [SerializeField]
     private Timer m_OrderTimer;
+    [SerializeField]
+    private AudioClip[] m_VoiceLines;
     public void ReceiveOrderItem()
     {
         //IngredientStorage.m_CurProfits += m_ItemPrices[m_OrderIdx];
@@ -67,5 +75,6 @@ public class CustomerBehavior : MonoBehaviour
         m_OrderTimer?.Play();
         m_OrderIdx++;
         m_ShowingItem = false;
+        m_AudioSource.PlayOneShot(m_VoiceLines[Random.Range(0, m_VoiceLines.Length)]);
     }
 }

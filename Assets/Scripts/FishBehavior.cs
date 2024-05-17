@@ -87,15 +87,29 @@ public class FishBehavior : MonoBehaviour
         m_Hook.AddStrainPercent(-m_FishInfo.m_Weight / 100f);
     }
 
+
+    [SerializeField]
+    private AudioClip[] m_SFX;
+    [SerializeField]
+    private float m_AudioVolume = .5f;
+    public AudioSource m_AudioSource;
+    //private void Awake()
+    //{
+    //    m_AudioSource = GetComponent<AudioSource>();
+    //}
     public void Release()
     {
         m_Hook = null;
         m_Hooked = false;
         m_TugTimer?.Stop();
+        m_AudioSource.volume = m_AudioVolume;
+        m_AudioSource.PlayOneShot(m_SFX[Random.Range(0, m_SFX.Length)]);
     }
     public void GetCaught()
     {
         IngredientStorage.AddFishToList(m_FishInfo);
+        m_AudioSource.volume = m_AudioVolume;
+        m_AudioSource.PlayOneShot(m_SFX[Random.Range(0, m_SFX.Length)]);
         //Destroy(gameObject);
     }
 }

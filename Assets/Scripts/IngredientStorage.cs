@@ -110,7 +110,7 @@ public class IngredientStorage
     public static float CustomerPayBonus { get; private set; } = 1f;
     public static void IncreaseCustomerPayBonus()
     {
-        CustomerPayBonus *= 1.05f;
+        CustomerPayBonus *= 1.1f;
     }
 
     public static float FishSpawnBonus { get; private set; } = 1f;

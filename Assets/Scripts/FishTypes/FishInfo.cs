@@ -16,6 +16,7 @@ public class FishInfo : ScriptableObject
     [Space(10)]
     public RuntimeAnimatorController m_FishAnimator;
     public Sprite m_FishOrderSprite;
+    public Color m_TextColor;
 
     [Space(10)]
     public float    m_MinSpeed;

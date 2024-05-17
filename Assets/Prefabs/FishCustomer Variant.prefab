@@ -76,6 +76,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishCustomer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ade066eb17461b45839a6cdb63f0a50, type: 3}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f5386fba4f3edd146a06df665b6e2299, type: 3}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8de52589be6e1954bb9d6c667e5166d4, type: 3}
     - target: {fileID: 5755403906021201498, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -123,6 +139,10 @@ PrefabInstance:
     - target: {fileID: 6814682471894103088, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
       propertyPath: m_LocalPosition.y
       value: 8.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159327420791152857, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7899895350004236747, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
       propertyPath: m_LocalPosition.y

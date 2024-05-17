@@ -11,6 +11,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloblCustomer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b6877c854611ef14a97000654e9e5a42, type: 3}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c377a0880d0dd94eb494c7863bd7e38, type: 3}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733415c560333244fa96492a05eb89c2, type: 3}
     - target: {fileID: 5755403906021201498, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
       propertyPath: m_RootOrder
       value: 0

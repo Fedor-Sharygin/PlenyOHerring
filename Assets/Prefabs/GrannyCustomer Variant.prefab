@@ -96,6 +96,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrannyCustomer Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 474254a74a9a71f4f9c014072ad792cc, type: 3}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c26308d98c34dd14d9500800a8644a4f, type: 3}
+    - target: {fileID: 4833648784292579850, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_VoiceLines.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d0b37a3134414a5489e3ed48ab8ebfd9, type: 3}
     - target: {fileID: 5755403906021201498, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -143,6 +159,10 @@ PrefabInstance:
     - target: {fileID: 6814682471894103088, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
       propertyPath: m_LocalPosition.y
       value: 8.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7159327420791152857, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7899895350004236747, guid: c5a478b8c06423446b636d7cd966b107, type: 3}
       propertyPath: m_LocalPosition.y

@@ -83,13 +83,23 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
+    private AudioSource m_AudioSource;
+    private void Awake()
+    {
+        m_AudioSource = GetComponent<AudioSource>();
+    }
+
     [SerializeField]
     private Transform m_TugOMeterPercent;
     public float m_CurrStrainPercent;
+    [SerializeField]
+    private AudioClip m_ProgressBleep;
     public void AddStrainPercent(float p_StrainPercent)
     {
         m_CurrStrainPercent += p_StrainPercent;
         m_TugOMeterPercent.localScale = Vector3.one * Mathf.Max(m_CurrStrainPercent, 0f);
+        m_AudioSource.pitch = m_CurrStrainPercent;
+        m_AudioSource.PlayOneShot(m_ProgressBleep);
     }
 
     [SerializeField]

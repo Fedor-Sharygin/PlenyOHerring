@@ -54,6 +54,10 @@ MonoBehaviour:
   m_Speed: 0
   m_Direction: 1
   m_TugTimer: {fileID: 1558269809441521073}
+  m_SFX:
+  - {fileID: 8300000, guid: bb2057d614d2f0f40a280e31a459ae8a, type: 3}
+  m_AudioVolume: 0.4
+  m_AudioSource: {fileID: 0}
 --- !u!114 &1558269809441521073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7d1e2cc1a724a489fb44d468163ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TimerDisplay: {fileID: 0}
+  m_TimerDisplayMode: 2
   m_TimerSeconds: 2
   m_ResetOnEnd: 1
   m_StartOnAwake: 0
