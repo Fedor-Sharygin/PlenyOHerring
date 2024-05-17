@@ -45,7 +45,7 @@ public class FishBehavior : MonoBehaviour
     private void SetNewPos(float p_NewX)
     {
         transform.localPosition = new Vector3(p_NewX, Random.Range(-3f, 0f));
-        m_Speed = Random.Range(m_FishInfo.m_MinSpeed, m_FishInfo.m_MaxSpeed);
+        m_Speed = Random.Range(m_FishInfo.m_MinSpeed, m_FishInfo.m_MaxSpeed) * IngredientStorage.FishSpeedBonus;
     }
 
 

@@ -164,7 +164,7 @@ public class ShopController : MonoBehaviour
             m_CustomerSocket.Stack(m_TableSocket.RemoveObj());
             m_ItemState = -1;
             m_CurCustomer.GetComponent<CustomerBehavior>().ReceiveOrderItem();
-            IngredientStorage.m_CurProfits += Mathf.CeilToInt(m_CurrentPrices[m_CurItemIdx] * IngredientStorage.CustomerPayBonus);
+            IngredientStorage.m_CurProfits += m_CurrentPrices[m_CurItemIdx] + IngredientStorage.CustomerPayBonus * 25;
             UpdateQuota();
             return;
         }

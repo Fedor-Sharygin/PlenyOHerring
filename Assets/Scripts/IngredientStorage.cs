@@ -96,8 +96,9 @@ public class IngredientStorage
     public static void ResetBonuses()
     {
         HookSpeedBonus = 1f;
-        CustomerPayBonus = 1f;
+        CustomerPayBonus = 0;
         FishSpawnBonus = 1f;
+        FishSpeedBonus = 1f;
         FishTugBonus = 1f;
     }
 
@@ -107,16 +108,18 @@ public class IngredientStorage
         HookSpeedBonus *= 1.2f;
     }
 
-    public static float CustomerPayBonus { get; private set; } = 1f;
+    public static int CustomerPayBonus { get; private set; } = 0;
     public static void IncreaseCustomerPayBonus()
     {
-        CustomerPayBonus *= 1.1f;
+        CustomerPayBonus += 1;
     }
 
     public static float FishSpawnBonus { get; private set; } = 1f;
+    public static float FishSpeedBonus { get; private set; } = 1f;
     public static void IncreaseFishSpawnBonus()
     {
         FishSpawnBonus *= .9f;
+        FishSpeedBonus *= 1.15f;
     }
 
     public static float FishTugBonus { get; private set; } = 1f;

@@ -90,12 +90,12 @@ public class Timer : MonoBehaviour
         {
             case DisplayMode.INT_DISPLAY:
                 {
-                    m_TimerDisplay.text = Mathf.FloorToInt(m_CurTimeLeft).ToString();
+                    m_TimerDisplay.text = Mathf.Max(0, Mathf.FloorToInt(m_CurTimeLeft)).ToString();
                 }
                 break;
             case DisplayMode.FLOAT_DISPLAY:
                 {
-                    m_TimerDisplay.text = m_CurTimeLeft.ToString();
+                    m_TimerDisplay.text = Mathf.Max(0, m_CurTimeLeft).ToString();
                 }
                 break;
         }

@@ -1528,12 +1528,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TimerDisplay: {fileID: 75930958}
   m_TimerDisplayMode: 1
-  m_TimerSeconds: 0
+  m_TimerSeconds: 80
   m_ResetOnEnd: 0
   m_StartOnAwake: 1
-  m_RandomTimer: 1
-  m_MinTimer: 100
-  m_MaxTimer: 140
+  m_RandomTimer: 0
+  m_MinTimer: 60
+  m_MaxTimer: 80
   m_EndActions:
     m_PersistentCalls:
       m_Calls:
